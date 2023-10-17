@@ -8,9 +8,9 @@ config({path: './config/config.env'})
 
 connectDatabase()
 cloudinary.config({
-  cloud_name: process.env.CLOUD_NAME,
-  api_key: process.env.CLOUD_API_KEY,
-  api_secret: process.env.CLOUD_API_SECRET,
+  cloud_name: 'dbeptj8fp',
+  api_key: '671723357986269',
+  api_secret: 'oYz8u2Y2AqJ9SletYLmDgO6naa8',
 });
 
 app.listen(process.env.PORT, () => {
