@@ -52,9 +52,9 @@ export const login = async (req, res) => {
           .status(400)
           .json({ success: false, message: "Please enter all fields" });
       }
-  
+      console.log(req.body)
       const user = await User.findOne({ email }).select("+password");
-  
+      console.log(user)
       if (!user) {
         return res
           .status(400)
