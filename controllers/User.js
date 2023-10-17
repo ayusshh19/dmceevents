@@ -6,7 +6,7 @@ export const register = async (req, res) => {
   console.log(req.body)
     try {
       const { name, email, password ,mobileNo,role} = req.body;
-        console.log(req)
+        console.log(req.body)
       const profileImage = req.files.profileImage.tempFilePath;
       console.log(profileImage);
   
