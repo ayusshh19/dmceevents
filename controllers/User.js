@@ -38,7 +38,7 @@ export const register = async (req, res) => {
       user.save()
     return res.status(200).json({ success: true, message:user})
     } catch (error) {
-      res.status(500).json({ success: false, message: error.message });
+      return res.status(500).json({ success: false, message: error.message });
     }
   };
 
