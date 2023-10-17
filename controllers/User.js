@@ -4,7 +4,7 @@ import fs from "fs";
 import bcrypt from "bcrypt";
 export const register = async (req, res) => {
   console.log(req.body)
-    try {
+    // try {
       const { name, email, password ,mobileNo,role} = req.body;
         console.log(req.body)
       const profileImage = req.files.profileImage.tempFilePath;
@@ -37,9 +37,9 @@ export const register = async (req, res) => {
       console.log(user)
       user.save()
     return res.status(200).json({ success: true, message:user})
-    } catch (error) {
-      return res.status(500).json({ success: false, message: error.message });
-    }
+    // } catch (error) {
+    //   return res.status(500).json({ success: false, message: error.message });
+    // }
   };
 
 export const login = async (req, res) => {
