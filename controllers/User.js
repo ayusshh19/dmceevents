@@ -3,9 +3,10 @@ import cloudinary from "cloudinary";
 import fs from "fs";
 import bcrypt from "bcrypt";
 export const register = async (req, res) => {
+  console.log(req.body)
     try {
       const { name, email, password ,mobileNo,role} = req.body;
-        // console.log(req)
+        console.log(req)
       const profileImage = req.files.profileImage.tempFilePath;
       console.log(profileImage);
   
@@ -17,11 +18,11 @@ export const register = async (req, res) => {
           .json({ success: false, message: "User already exists" });
       }
   
-  
+      console.log("yeha tak no issue")
       const mycloud = await cloudinary.v2.uploader.upload(profileImage);
-  
+      console.log("fix this error")
       fs.rmSync("./tmp", { recursive: true });
-  
+      
       user = await User.create({
         name,
         email,
@@ -33,7 +34,7 @@ export const register = async (req, res) => {
         mobileNo,
         role
       });
-  
+      console.log(user)
       user.save()
     return res.status(200).json({ success: true, message:user})
     } catch (error) {
