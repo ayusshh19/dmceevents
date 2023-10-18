@@ -30,7 +30,7 @@ async function checkEventCollision(location, date, start, end) {
 export const addevent = async (req, res) => {
     // try {
         const { eventname, committee, start, end, location, about, date } = req.body;
-        // console.log(req)
+        console.log(req.body)
         const poster = req.files.poster.tempFilePath;
         console.log(poster);
 
