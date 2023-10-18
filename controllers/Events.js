@@ -28,7 +28,7 @@ async function checkEventCollision(location, date, start, end) {
 
 
 export const addevent = async (req, res) => {
-    try {
+    // try {
         const { eventname, committee, start, end, location, about, date } = req.body;
         // console.log(req)
         const poster = req.files.poster.tempFilePath;
@@ -67,9 +67,9 @@ export const addevent = async (req, res) => {
 
         user.save()
         return res.status(200).json({ success: true, message: user })
-    } catch (error) {
-        res.status(500).json({ success: false, message: error.message });
-    }
+    // } catch (error) {
+    //     res.status(500).json({ success: false, message: error.message });
+    // }
 };
 
 export const getevnt = async (req, res) => {
