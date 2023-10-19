@@ -1,6 +1,7 @@
 import event from "../models/Events.js";
 import cloudinary from "cloudinary";
 import fs from "fs";
+import event from "../models/Events.js";
 
 async function checkEventCollision(location, date, start, end) {
 
@@ -87,8 +88,8 @@ export const approvedby = async (req, res) => {
     const eventId=req.body.eventId;
     const roles=req.body.roles;
     // try {
-        const event = await Event.findById(eventId);
-        if (!event) {
+        const event1 = await event.findById(eventId);
+        if (!event1) {
             return  res.status(400).json({ success: false, data: "event not found!" });
         }
         // Check if idToAdd is not already in the approvedb array
