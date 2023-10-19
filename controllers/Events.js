@@ -92,8 +92,8 @@ export const approvedby = async (req, res) => {
         if (!event1) {
             return  res.status(400).json({ success: false, data: "event not found!" });
         }
-            event.approvedb.push(roles);
-          await event.save();
+            event1.approvedb.push(roles);
+          await event1.save();
           return  res.status(200).json({ success: true, data: "successfull" });
         
     //   } catch (error) {
