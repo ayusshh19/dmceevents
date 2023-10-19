@@ -86,7 +86,7 @@ export const approvedby = async (req, res) => {
     console.log(req.body)
     const eventId=req.body.eventId;
     const roles=req.body.roles;
-    try {
+    // try {
         const event = await Event.findById(eventId);
         if (!event) {
             return  res.status(400).json({ success: false, data: "event not found!" });
@@ -99,9 +99,9 @@ export const approvedby = async (req, res) => {
         } else {
             return  res.status(400).json({ success: false, data: "something went wrong" });
         }
-      } catch (error) {
-        return  res.status(500).json({ success: true, data: error.message });
-      }
+    //   } catch (error) {
+    //     return  res.status(500).json({ success: true, data: error.message });
+    //   }
 }
 
 
