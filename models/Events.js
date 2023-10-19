@@ -38,6 +38,7 @@ const eventSchema = new Schema({
     approvedb:{
       type:[String],
       required: false,
+      default:[]
     }
   });
 

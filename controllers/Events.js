@@ -82,6 +82,26 @@ export const getevnt = async (req, res) => {
     }
 }
 
+export const approvedby = async (req, res) => {
+    const eventId=req.body.eventId;
+    const roles=req.body.roles;
+    try {
+        const event = await Event.findById(eventId);
+        if (!event) {
+          throw new Error('Event not found');
+        }
+        // Check if idToAdd is not already in the approvedb array
+        if (!event.approvedb.includes(roles)) {
+          event.approvedb.push(roles);
+          await event.save();
+        } else {
+          throw new Error('ID is already in the approvedb array');
+        }
+      } catch (error) {
+        throw new Error(error.message);
+      }
+}
+
 
 export const updateevent = async (req, res) => {
     console.log(req.body._id)

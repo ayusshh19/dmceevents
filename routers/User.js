@@ -3,7 +3,7 @@ import {
   register, login
 } from "../controllers/User.js";
 import { addcommittee, getcommittee, updateCommittee, deleteCommittee } from "../controllers/Committee.js";
-import { addevent, getevnt, updateevent,deleteevent } from "../controllers/Events.js";
+import { addevent, getevnt, updateevent,deleteevent ,approvedby} from "../controllers/Events.js";
 const router = express.Router();
 
 router.route("/register").post(register);
@@ -18,6 +18,7 @@ router.route("/addevent").post(addevent)
 router.route("/getevent").get(getevnt)
 router.route("/updatevent").put(updateevent)
 router.route("/deleteevent").delete(deleteevent)
+router.route("/approvedevent").put(approvedby)
 
 
 
