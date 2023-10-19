@@ -83,6 +83,7 @@ export const getevnt = async (req, res) => {
 }
 
 export const approvedby = async (req, res) => {
+    console.log(req.body)
     const eventId=req.body.eventId;
     const roles=req.body.roles;
     try {
