@@ -92,8 +92,8 @@ export const approvedby = async (req, res) => {
             return  res.status(400).json({ success: false, data: "event not found!" });
         }
         // Check if idToAdd is not already in the approvedb array
-        if (!event.approvedb.includes(roles)) {
-          event.approvedb.push(roles);
+            if (Array.isArray(event.approvedb) && !event.approvedb.includes(roles)) {
+            event.approvedb.push(roles);
           await event.save();
           return  res.status(200).json({ success: true, data: "successfull" });
         } else {
