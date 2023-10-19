@@ -88,17 +88,14 @@ export const approvedby = async (req, res) => {
     const roles=req.body.roles;
     // try {
         const event1 = await event.findById(eventId);
+        console.log(event1)
         if (!event1) {
             return  res.status(400).json({ success: false, data: "event not found!" });
         }
-        // Check if idToAdd is not already in the approvedb array
-            if (Array.isArray(event.approvedb) && !event.approvedb.includes(roles)) {
             event.approvedb.push(roles);
           await event.save();
           return  res.status(200).json({ success: true, data: "successfull" });
-        } else {
-            return  res.status(400).json({ success: false, data: "something went wrong" });
-        }
+        
     //   } catch (error) {
     //     return  res.status(500).json({ success: true, data: error.message });
     //   }
