@@ -1,7 +1,6 @@
 import event from "../models/Events.js";
 import cloudinary from "cloudinary";
 import fs from "fs";
-import event from "../models/Events.js";
 
 async function checkEventCollision(location, date, start, end) {
 
